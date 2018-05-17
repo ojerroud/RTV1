@@ -12,10 +12,20 @@
 
 #include "rtv1.h"
 
-int main(int ac, char **av)
+void    init_mlx(t_env *e)
 {
+    e->mlx.mlx = mlx_init();
+    e->mlx.win = mlx_new_window(e->mlx.mlx, WIDTH, HEIGHT, "win");
+    mlx_loop(e->mlx.mlx);
+}
+
+int     main(int ac, char **av)
+{
+    t_env  e;
+
     if (ac != 2)
         return (0);
     av[1][0] += 0;
-        return (0);
+    init_mlx(&e);
+    return (0);
 }
