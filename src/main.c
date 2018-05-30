@@ -12,10 +12,18 @@
 
 #include "rtv1.h"
 
+int     esc(int keycode, int zero)
+{
+    if (keycode == 53)
+        exit (zero);
+    return (zero);
+}
+
 void    init_mlx(t_env *e)
 {
     e->mlx.mlx = mlx_init();
     e->mlx.win = mlx_new_window(e->mlx.mlx, WIDTH, HEIGHT, "win");
+    mlx_key_hook(e->mlx.win, esc, 0);
     mlx_loop(e->mlx.mlx);
 }
 

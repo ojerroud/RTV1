@@ -41,7 +41,7 @@ $(OBJDIR):
 clean :
 	@make clean -C libft
 	@/bin/rm -rf $(OBJDIR)
-	@echo "clean fractol"
+	@echo "clean.."
 
 fclean : clean
 	@make fclean -C libft
